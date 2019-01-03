@@ -1,6 +1,7 @@
 // Copyright 2016-2018 Chris Conway (Koderz). All Rights Reserved.
 
 using UnrealBuildTool;
+using System.IO;
 
 public class RuntimeMeshComponentEditor : ModuleRules
 {
@@ -10,17 +11,17 @@ public class RuntimeMeshComponentEditor : ModuleRules
 
         PublicIncludePaths.AddRange(
             new string[] {
-                "RuntimeMeshComponentEditor/Public"
-				// ... add public include paths required here ...
-			}
+                Path.Combine(ModuleDirectory, "Public"),
+                // ... add public include paths required here ...
+            }
             );
 
 
         PrivateIncludePaths.AddRange(
             new string[] {
-                "RuntimeMeshComponentEditor/Private",
-				// ... add other private include paths required here ...
-			}
+                Path.Combine(ModuleDirectory, "Public"),
+                // ... add other private include paths required here ...
+            }
             );
 
 
@@ -28,7 +29,7 @@ public class RuntimeMeshComponentEditor : ModuleRules
             new string[]
             {
                 "Core",
-				// ... add other public dependencies that you statically link with here ...
+                // ... add other public dependencies that you statically link with here ...
                 
             }
             );
@@ -61,8 +62,8 @@ public class RuntimeMeshComponentEditor : ModuleRules
         DynamicallyLoadedModuleNames.AddRange(
             new string[]
             {
-				// ... add any modules that your module loads dynamically here ...
-			}
+                // ... add any modules that your module loads dynamically here ...
+            }
             );
     }
 }
